@@ -2,8 +2,7 @@ import os
 import time
 import random
 
-ascii_weight_index = ["·",":","•","+","*","Ø","#","%","@"]
-
+ascii_weight_index = ["·",":","•","+","*","#","%","Ø","@"]
 class Cell:
     def __init__(self, x, y, isalive):
         self.x = x
@@ -77,23 +76,11 @@ class Cell:
             if str(neighbors) in survive:
                 self.isalive = True
         return self
-while True:
-    os.system("clear")
-    print("Enter space separed dimensions (width by height) for the grid.")
-    try:
-        dims = list(map(int, input().split()))
-        GRID_W = dims[0]
-        GRID_H = dims[1]
-        if GRID_W == 0 or GRID_H == 0:
-            print("Try again.")
-            time.sleep(1)
-            continue
-        time.sleep(0.25)
-        break
-    except:
-        print("Try again.")
-        time.sleep(1)
-        continue
+
+os.system("clear")
+GRID_W = os.get_terminal_size().columns
+GRID_H = os.get_terminal_size().lines
+
 printguide = False
 while True:
     os.system("clear")
