@@ -2,7 +2,7 @@ import os
 import time
 import random
 
-ascii_weight_index = ["·",":","•","+","*","#","%","Ø","@"]
+ascii_weight_index = ["█","█","█","█","█","█","█","█","█"]
 class Cell:
     def __init__(self, x, y, isalive):
         self.x = x
